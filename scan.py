@@ -3,6 +3,7 @@ import fitz  # PyMuPDF
 import pytesseract
 from pdf2image import convert_from_path
 from PIL import Image
+from datetime import datetime
 
 # Configurar o caminho do executável Tesseract
 # Para Windows (ajuste conforme necessário)
@@ -18,7 +19,20 @@ def ocr_pdf_folder(input_folder, output_folder):
         if file_name.endswith('.pdf'):
             input_path = os.path.join(input_folder, file_name)
             output_path = os.path.join(output_folder, file_name)
+            
+            # Verificar se o arquivo já existe na pasta de saída
+            if os.path.exists(output_path):
+                # Adicionar data e hora ao nome do arquivo
+                timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
+                base_name, ext = os.path.splitext(file_name)
+                new_file_name = f"{base_name}_{timestamp}{ext}"
+                output_path = os.path.join(output_folder, new_file_name)
+            
             ocr_pdf(input_path, output_path)
+            
+            # Remover o arquivo original após o processamento
+            os.remove(input_path)
+            print(f"Arquivo processado e removido: {file_name}")
 
 # Função para realizar OCR em um único PDF
 def ocr_pdf(input_path, output_path):
