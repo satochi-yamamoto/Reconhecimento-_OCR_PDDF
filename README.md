@@ -106,13 +106,13 @@ python process_pdfs.py
 ### 3. Os PDFs processados com OCR serão salvos na pasta Scan_out. Os arquivos originais serão automaticamente removidos.
 
 ## Logs e Depuração
-### Durante a execução, o script exibe mensagens no terminal indicando quais arquivos estão sendo processados e quais foram removidos.
-### Para verificar erros ou problemas, certifique-se de que:
-### O caminho para o Tesseract está correto.
-### Os arquivos de idioma estão instalados (por.traineddata).
-### Você tem permissões de leitura e gravação nas pastas de entrada e saída.
+- Durante a execução, o script exibe mensagens no terminal indicando quais arquivos estão sendo processados e quais foram removidos.
+- Para verificar erros ou problemas, certifique-se de que:
+- O caminho para o Tesseract está correto.
+- Os arquivos de idioma estão instalados (por.traineddata).
+- Você tem permissões de leitura e gravação nas pastas de entrada e saída.
 
 
 ## Contribuições
 
-### Contribuições são bem-vindas! Caso encontre problemas ou tenha sugestões de melhoria, sinta-se à vontade para abrir uma issue ou enviar um pull request.
+- Contribuições são bem-vindas! Caso encontre problemas ou tenha sugestões de melhoria, sinta-se à vontade para abrir uma issue ou enviar um pull request.
